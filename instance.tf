@@ -49,7 +49,7 @@ resource "aws_instance" "example-Web-1" {
   subnet_id = aws_subnet.main-private.id
 
   # the security group
-  vpc_security_group_ids = [aws_security_group.allow-ssh.id]
+  vpc_security_group_ids = [aws_security_group.allow-ssh.id , aws_security_group.allow-http.id]
 
   # set private static ip
   private_ip = "10.0.2.11"
@@ -86,7 +86,7 @@ resource "aws_instance" "example-Web-2" {
   subnet_id = aws_subnet.main-private.id
 
   # the security group
-  vpc_security_group_ids = [aws_security_group.allow-ssh.id]
+  vpc_security_group_ids = [aws_security_group.allow-ssh.id , aws_security_group.allow-http.id]
 
   # set private static ip
   private_ip = "10.0.2.12"
