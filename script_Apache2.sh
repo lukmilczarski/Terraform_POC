@@ -9,7 +9,7 @@ done
 apt-get update
 apt-get -y install apache2
 
-cp index.html /var/www/html/index.html
+cp /tmp/index.html /var/www/html/index.html
 
 # make sure apache is started
 systemctl stop apache2
