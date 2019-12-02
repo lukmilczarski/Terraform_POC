@@ -53,8 +53,8 @@ resource "aws_instance" "example-Web-1" {
 
 
   provisioner "file" {
-    source      = "script_Apache.sh"
-    destination = "/tmp/script_Apache.sh"
+    source      = "script_Apache2.sh"
+    destination = "/tmp/script_Apache2.sh"
   }
 
   provisioner "remote-exec" {
@@ -88,14 +88,14 @@ resource "aws_instance" "example-Web-2" {
 
 
   provisioner "file" {
-    source      = "script_Apache.sh"
-    destination = "/tmp/script_Apache.sh"
+    source      = "script_Apache2.sh"
+    destination = "/tmp/script_Apache2.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/script_Apache.sh",
-      "sudo /tmp/script_Apache.sh",
+      "chmod +x /tmp/script_Apache2.sh",
+      "sudo /tmp/script_Apache2.sh",
     ]
   }
 
