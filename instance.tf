@@ -52,7 +52,7 @@ resource "aws_instance" "example-Web-1" {
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
 
   # set private static ip
-  private_ip = "10.0.2.1"
+  private_ip = "10.0.2.11"
 
   provisioner "file" {
     source      = "script_Apache2.sh"
@@ -89,7 +89,7 @@ resource "aws_instance" "example-Web-2" {
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
 
   # set private static ip
-  private_ip = "10.0.2.2"
+  private_ip = "10.0.2.12"
 
   provisioner "file" {
     source      = "script_Apache2.sh"
