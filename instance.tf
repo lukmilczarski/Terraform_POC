@@ -14,7 +14,7 @@ resource "aws_instance" "example-HAProxy" {
   subnet_id = aws_subnet.main-public.id
 
   # the security group
-  vpc_security_group_ids = [aws_security_group.allow-ssh.id  aws_security_group.allow-http.id]
+  vpc_security_group_ids = [aws_security_group.allow-ssh.id , aws_security_group.allow-http.id]
 
 
   provisioner "file" {
