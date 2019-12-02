@@ -9,5 +9,9 @@ done
 apt-get update
 apt-get -y install apache2
 
+cp index.html /var/www/html/index.html
+
 # make sure apache is started
-service apache2 start
+systemctl stop apache2
+systemctl enable apache2
+systemctl start apache2

@@ -22,6 +22,11 @@ resource "aws_instance" "example-HAProxy" {
     destination = "/tmp/script_HA.sh"
   }
 
+  provisioner "file" {
+    source      = "haproxy.cfg"
+    destination = "/tmp/haproxy.cfg"
+  }
+
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script_HA.sh",
@@ -59,6 +64,12 @@ resource "aws_instance" "example-Web-1" {
     destination = "/tmp/script_Apache2.sh"
   }
 
+  provisioner "file" {
+    source      = "index_web_server_1.html"
+    destination = "/tmp/index.html"
+  }
+
+
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script_Apache2.sh",
@@ -94,6 +105,11 @@ resource "aws_instance" "example-Web-2" {
   provisioner "file" {
     source      = "script_Apache2.sh"
     destination = "/tmp/script_Apache2.sh"
+  }
+
+  provisioner "file" {
+    source      = "index_web_server_2.html"
+    destination = "/tmp/index.html"
   }
 
   provisioner "remote-exec" {
